@@ -2,7 +2,7 @@
 
 API Main Link: https://apilist.fun/api/an-api-of-ice-and-fire
 
-# API to use: 
+# APIs to use: 
 
 Books: https://anapioficeandfire.com/api/books/{id}
 
