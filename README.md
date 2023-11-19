@@ -10,6 +10,11 @@ Houses: https://anapioficeandfire.com/api/houses/{id}
 
 Characters: https://anapioficeandfire.com/api/characters/{id}
 
+# Initial Design:
+
+https://drive.google.com/drive/folders/1rWz9IsiL5b_tCsFslwWw3-MARokUAVpe
+
+
 
 
 
