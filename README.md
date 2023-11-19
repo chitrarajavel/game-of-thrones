@@ -12,7 +12,7 @@ Characters: https://anapioficeandfire.com/api/characters/{id}
 
 # Initial Design:
 
-https://drive.google.com/drive/folders/1rWz9IsiL5b_tCsFslwWw3-MARokUAVpe
+https://drive.google.com/file/d/1uiI1n-TjzGXOWxbI_A5b76h4EWHvaSKe/view?usp=sharing
 
 
 
