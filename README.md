@@ -16,8 +16,7 @@ https://drive.google.com/file/d/1uiI1n-TjzGXOWxbI_A5b76h4EWHvaSKe/view?usp=shari
 
 # Design with Components:
 
-https://drive.google.com/file/d/12rXIHjtgQDIkg1xH4cwNGyTd8UCR1yew/view?usp=sharing
-
+https://drive.google.com/drive/folders/1rWz9IsiL5b_tCsFslwWw3-MARokUAVpe
 
 
 
