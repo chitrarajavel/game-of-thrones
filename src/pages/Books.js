@@ -4,10 +4,7 @@ import ReactDOM from 'react-dom/client';
 
 const Books = () => {
     return (
-        <>
-            <br />
-            <br />
-            <br />
+        <div className="Books">
             <h1>Books</h1>;
         </>
     );
