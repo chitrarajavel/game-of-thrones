@@ -1,0 +1,13 @@
+.FrontPage {
+    background-image: url('../assets/frontpage.png');
+    height: 100vh;
+    width: 100vw;
+    /* background-size: cover; */
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-color: #000000;
+}
+
+.FrontPage-Links {
+    color: White;
+}
