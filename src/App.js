@@ -18,12 +18,11 @@ function App() {
      */
 
     function signup(userObj) {
-        let validated = api.registerUser(userObj);
+        let response = api.registerUser(userObj);
 
-        if (!validated) return {success: false};
-
-        setCurrentUser(userObj);
-        return {success: true};
+        if (response.success) {
+            setCurrentUser(userObj);
+        }
     }
 
     /**

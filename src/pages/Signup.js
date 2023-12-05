@@ -67,28 +67,26 @@ const Signup = ({signup}) => {
     });
 
     return (
-        <>
-            <div className="Signup-Wrapper d-flex align-items-center justify-content-center w-100">
-                <div className="Signup rounded">
-                    <h6 className="mb-3">Sign Up to View Fan-Page</h6>
-                    <form
-                        onSubmit={e => {
-                            e.preventDefault();
-                            formik.handleSubmit(e);
-                        }}
-                    >
-                        {formInputs}
+        <div className="Signup-Wrapper d-flex align-items-center justify-content-center w-100">
+            <div className="Signup rounded">
+                <h6 className="mb-3">Sign Up to View Fan-Page</h6>
+                <form
+                    onSubmit={e => {
+                        e.preventDefault();
+                        formik.handleSubmit(e);
+                    }}
+                >
+                    {formInputs}
 
-                        <button
-                            type="submit"
-                            className="btn btn-dark block w-100 mt-2"
-                        >
-                            Submit
-                        </button>
-                    </form>
-                </div>
+                    <button
+                        type="submit"
+                        className="btn btn-dark block w-100 mt-2"
+                    >
+                        Submit
+                    </button>
+                </form>
             </div>
-        </>
+        </div>
     );
 };
 export default Signup;

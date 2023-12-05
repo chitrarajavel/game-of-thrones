@@ -32,44 +32,42 @@ const Login = ({login}) => {
     }
 
     return (
-        <>
-            <div className="Login-Wrapper d-flex align-items-center justify-content-center w-100">
-                <div className="Login rounded">
-                    <h6 className="mb-3">Login to View Fan-Page</h6>
-                    <form onSubmit={handleSubmit}>
-                        <div className="Login-Form-Group mb-2">
-                            <label htmlFor="email" className="form-label">
-                                Email Address:
-                            </label>
-                            <input
-                                type="email"
-                                className="form-control Login-Form-Input"
-                                onChange={handleEmailChange}
-                            ></input>
-                        </div>
-                        <div className="Login-Form-Group mb-2">
-                            <label htmlFor="password" className="form-label">
-                                Password:
-                            </label>
-                            <input
-                                type="password"
-                                className="form-control Login-Form-Input"
-                                onChange={handlePWChange}
-                            ></input>
-                        </div>
-                        <button
-                            type="submit"
-                            className="btn btn-dark block w-100 mt-2"
-                        >
-                            Submit
-                        </button>
-                    </form>
-                    {showError ? (
-                        <div style={{color: 'red'}}>Login failed</div>
-                    ) : null}
-                </div>
+        <div className="Login-Wrapper d-flex align-items-center justify-content-center w-100">
+            <div className="Login rounded">
+                <h6 className="mb-3">Login to View Fan-Page</h6>
+                <form onSubmit={handleSubmit}>
+                    <div className="Login-Form-Group mb-2">
+                        <label htmlFor="email" className="form-label">
+                            Email Address:
+                        </label>
+                        <input
+                            type="email"
+                            className="form-control Login-Form-Input"
+                            onChange={handleEmailChange}
+                        ></input>
+                    </div>
+                    <div className="Login-Form-Group mb-2">
+                        <label htmlFor="password" className="form-label">
+                            Password:
+                        </label>
+                        <input
+                            type="password"
+                            className="form-control Login-Form-Input"
+                            onChange={handlePWChange}
+                        ></input>
+                    </div>
+                    <button
+                        type="submit"
+                        className="btn btn-dark block w-100 mt-2"
+                    >
+                        Submit
+                    </button>
+                </form>
+                {showError ? (
+                    <div style={{color: 'red'}}>Login failed</div>
+                ) : null}
             </div>
-        </>
+        </div>
     );
 };
 export default Login;
