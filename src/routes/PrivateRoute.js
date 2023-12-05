@@ -1,5 +1,6 @@
 import React, {useContext} from 'react';
 import {Outlet, Navigate} from 'react-router-dom';
+
 import UserContext from '../auth/UserContext.js';
 
 function PrivateRoute() {

@@ -1,14 +1,11 @@
-// import '../styles/Characters.css';
 import React, {useState, useEffect} from 'react';
-import ReactDOM from 'react-dom/client';
+
+import '../styles/Characters.css';
 
 const Characters = () => {
     return (
         <>
-            <br />
-            <br />
-            <br />
-            <h1>Characters</h1>;
+            <h1 className="Characters">Characters</h1>;
         </>
     );
 };

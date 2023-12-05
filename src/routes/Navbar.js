@@ -1,7 +1,9 @@
-import '../styles/Navbar.css';
 import React, {useContext} from 'react';
 import {Link} from 'react-router-dom';
+
 import UserContext from '../auth/UserContext.js';
+
+import '../styles/Navbar.css';
 
 const Navbar = ({logout}) => {
     const userObj = useContext(UserContext);

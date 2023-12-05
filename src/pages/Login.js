@@ -1,7 +1,8 @@
-import '../styles/Login.css';
 import React, {useState} from 'react';
-import 'bootstrap/dist/css/bootstrap.css';
 import {useNavigate} from 'react-router-dom';
+
+import '../styles/Login.css';
+import 'bootstrap/dist/css/bootstrap.css';
 
 const Login = ({login}) => {
     const [email, setEmail] = useState('');

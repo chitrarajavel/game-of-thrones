@@ -1,14 +1,11 @@
-// import '../styles/Books.css';
 import React, {useState, useEffect} from 'react';
-import ReactDOM from 'react-dom/client';
+
+import '../styles/Books.css';
 
 const Books = () => {
     return (
         <>
-            <br />
-            <br />
-            <br />
-            <h1>Books</h1>;
+            <h1 className="Books">Books</h1>;
         </>
     );
 };

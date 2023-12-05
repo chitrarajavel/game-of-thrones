@@ -1,12 +1,12 @@
-// import '../styles/RouteList.css';
 import React from 'react';
 import {Navigate, BrowserRouter, Routes, Route} from 'react-router-dom';
-import Signup from '../pages/Signup';
-import Login from '../pages/Login';
-import FrontPage from '../pages/FrontPage';
-import Characters from '../pages/Characters';
-import Books from '../pages/Books';
-import Houses from '../pages/Houses';
+
+import Signup from '../pages/Signup.js';
+import Login from '../pages/Login.js';
+import FrontPage from '../pages/FrontPage.js';
+import Characters from '../pages/Characters.js';
+import Books from '../pages/Books.js';
+import Houses from '../pages/Houses.js';
 import Navbar from './Navbar.js';
 import PrivateRoute from './PrivateRoute.js';
 

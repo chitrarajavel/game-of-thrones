@@ -1,9 +1,11 @@
-import './App.css';
-import RouteList from './routes/RouteList.js';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Api from './modules/Api.js';
 import {useEffect, useState} from 'react';
+
+import RouteList from './routes/RouteList.js';
 import UserContext from './auth/UserContext.js';
+import Api from './modules/Api.js';
+
+import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
     const api = new Api();

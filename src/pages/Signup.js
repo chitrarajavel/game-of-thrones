@@ -1,9 +1,12 @@
-import '../styles/Signup.css';
+import {useNavigate} from 'react-router-dom';
+
+import Api from '../modules/Api.js';
+import FormInput from '../components/common/FormInput.js';
+
 import {useFormik} from 'formik';
 import * as Yup from 'yup';
-import FormInput from '../components/FormInput.js';
-import {useNavigate} from 'react-router-dom';
-import Api from '../modules/Api.js';
+
+import '../styles/Signup.css';
 
 const Signup = ({signup}) => {
     const api = new Api();

@@ -1,6 +1,6 @@
-import '../styles/FrontPage.css';
 import React, {useState, useEffect} from 'react';
-import ReactDOM from 'react-dom/client';
+
+import '../styles/FrontPage.css';
 
 const FrontPage = () => {
     return (
