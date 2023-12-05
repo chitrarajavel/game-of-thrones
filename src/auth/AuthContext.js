@@ -2,6 +2,6 @@ import {createContext} from 'react';
 
 /** Context: provides currentUser object and setter for it throughout app. */
 
-const UserContext = createContext();
+const AuthContext = createContext();
 
-export default UserContext;
+export default AuthContext;

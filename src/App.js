@@ -1,17 +1,18 @@
 import {useEffect, useState} from 'react';
 
 import RouteList from './routes/RouteList.js';
-import UserContext from './auth/UserContext.js';
+import AuthContext from './auth/AuthContext.js';
 import Api from './modules/Api.js';
 
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
-    const api = new Api();
     const [currentUser, setCurrentUser] = useState(null);
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const api = new Api();
 
-    useEffect(() => {}, []);
+    // useEffect(() => {}, []);
 
     /**
      * Sign up function to register user via Api module
@@ -22,6 +23,7 @@ function App() {
 
         if (response.success) {
             setCurrentUser(userObj);
+            setIsAuthenticated(true);
         }
     }
 
@@ -36,6 +38,7 @@ function App() {
         if (!userObj) return {success: false};
 
         setCurrentUser(userObj);
+        setIsAuthenticated(true);
         return {success: true};
     }
 
@@ -45,13 +48,14 @@ function App() {
 
     function logout() {
         setCurrentUser(null);
+        setIsAuthenticated(false);
     }
 
     return (
         <div className="App">
-            <UserContext.Provider value={currentUser}>
+            <AuthContext.Provider value={[isAuthenticated, currentUser]}>
                 <RouteList login={login} signup={signup} logout={logout} />
-            </UserContext.Provider>
+            </AuthContext.Provider>
         </div>
     );
 }

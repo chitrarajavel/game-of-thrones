@@ -1,15 +1,12 @@
 import React, {useContext} from 'react';
 import {Link} from 'react-router-dom';
 
-import UserContext from '../auth/UserContext.js';
+import AuthContext from '../auth/AuthContext.js';
 
 import '../styles/Navbar.css';
 
 const Navbar = ({logout}) => {
-    const userObj = useContext(UserContext);
-    console.log(userObj);
-
-    let auth = userObj ? true : false;
+    const [isAuthenticated] = useContext(AuthContext);
 
     return (
         <nav className="Navbar">
@@ -19,7 +16,7 @@ const Navbar = ({logout}) => {
                 </Link>
             </div>
             <div className="NavBar-Right-Container">
-                {!auth ? (
+                {!isAuthenticated ? (
                     <ul>
                         <li>
                             <Link to="/login">Login</Link>

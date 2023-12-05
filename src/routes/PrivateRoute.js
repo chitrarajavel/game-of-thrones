@@ -1,12 +1,12 @@
 import React, {useContext} from 'react';
 import {Outlet, Navigate} from 'react-router-dom';
 
-import UserContext from '../auth/UserContext.js';
+import AuthContext from '../auth/AuthContext.js';
 
 function PrivateRoute() {
-    const userObj = useContext(UserContext);
+    const [isAuthenticated] = useContext(AuthContext);
 
-    if (!userObj) {
+    if (!isAuthenticated) {
         return <Navigate to="/" />;
     }
 

@@ -10,7 +10,7 @@ class Api {
     registerUser(user) {
         //already validating in formik
         if (!user.email) {
-            throw new Error('missing email');
+            return {success: false};
         }
         let strUser = JSON.stringify(user);
         this.localstorage.setItem(user.email, strUser);
