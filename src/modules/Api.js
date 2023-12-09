@@ -4,7 +4,7 @@ class Api {
         this.databaseKey = 'GoT_DB';
         this.localstorage = localStorage;
         // [{firstName:"", lastName:"", email:"", password: "", favorites: {books:[], characters: [], houses:[]}}]
-        this.database = {users: []}; // store firstName, lastName, email, password, and favorites object
+        this.database = {users: []};
     }
 
     /**
@@ -35,7 +35,10 @@ class Api {
 
     userExists(email) {
         let dbUsers = this.database.users;
-        return dbUsers.filter(user => (email === user.email ? true : false));
+        let filteredArr = dbUsers.filter(user =>
+            email === user.email ? true : false
+        );
+        return filteredArr.length !== 0;
     }
 
     /**
@@ -43,14 +46,22 @@ class Api {
      */
 
     registerUser(user) {
-        //already validating in formik
-        if (!user.email) {
-            return {success: false};
-        }
-        let strUser = JSON.stringify(user);
-        this.localstorage.setItem(user.email, strUser);
+        let dbUsers = this.database.users;
+        if (this.userExists(user.email)) return {success: false};
+        dbUsers.push(user);
+        this.saveDatabase();
         return {success: true};
     }
+
+    // registerUser(user) {
+    //     //already validating in formik
+    //     if (!user.email) {
+    //         return {success: false};
+    //     }
+    //     let strUser = JSON.stringify(user);
+    //     this.localstorage.setItem(user.email, strUser);
+    //     return {success: true};
+    // }
 
     /**
      *
