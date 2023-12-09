@@ -68,14 +68,18 @@ class Api {
     }
 
     /**
-     *
+     * Remove user from database
      */
 
-    removeUser(user) {
-        if (!user.email) {
+    // Not currently using it at the moment. Can be used for deleting user account from Profile
+    removeUser(email) {
+        if (!email) {
             return;
         }
-        this.localstorage.removeItem(user.email);
+        let dbUsers = this.database.users;
+        let filteredArr = dbUsers.filter(user => email !== user.email);
+        dbUsers = filteredArr;
+        this.saveDatabase();
     }
 }
 
