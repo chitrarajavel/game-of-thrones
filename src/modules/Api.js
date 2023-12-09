@@ -53,17 +53,18 @@ class Api {
     }
 
     /**
-     *
+     * Get user from database for login information
      */
 
     getUser(email, password) {
         if (!email && !password) {
             return null;
         }
-
-        let strUser = this.localstorage.getItem(email);
-        let userObj = strUser ? JSON.parse(strUser) : null;
-        return userObj && password === userObj.password ? userObj : null;
+        let dbUsers = this.database.users;
+        let filteredArr = dbUsers.filter(
+            user => user.email === email && user.password === password
+        );
+        return filteredArr.length !== 0 ? filteredArr[0] : null;
     }
 
     /**
