@@ -5,6 +5,7 @@ class Api {
         this.localstorage = localStorage;
         // [{firstName:"", lastName:"", email:"", password: "", favorites: {books:[], characters: [], houses:[]}}]
         this.database = {users: []};
+        this.loadDatabase();
     }
 
     /**
@@ -30,19 +31,17 @@ class Api {
     }
 
     /**
-     *  returns a boolean to validate if the email exists on the signup form
+     *  Returns a boolean to validate if the email exists on the signup form
      */
 
     userExists(email) {
         let dbUsers = this.database.users;
-        let filteredArr = dbUsers.filter(user =>
-            email === user.email ? true : false
-        );
+        let filteredArr = dbUsers.filter(user => email === user.email);
         return filteredArr.length !== 0;
     }
 
     /**
-     *
+     *  Save userobj from signup data to the database
      */
 
     registerUser(user) {
@@ -52,16 +51,6 @@ class Api {
         this.saveDatabase();
         return {success: true};
     }
-
-    // registerUser(user) {
-    //     //already validating in formik
-    //     if (!user.email) {
-    //         return {success: false};
-    //     }
-    //     let strUser = JSON.stringify(user);
-    //     this.localstorage.setItem(user.email, strUser);
-    //     return {success: true};
-    // }
 
     /**
      *
