@@ -64,7 +64,7 @@ const Login = ({login}) => {
                     </button>
                 </form>
                 {showError ? (
-                    <div style={{color: 'red'}}>Login failed</div>
+                    <div style={{color: 'red'}}>Invalid Email or Password</div>
                 ) : null}
             </div>
         </div>
