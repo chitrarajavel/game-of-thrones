@@ -9,6 +9,7 @@ import Books from '../pages/Books.js';
 import Houses from '../pages/Houses.js';
 import Navbar from './Navbar.js';
 import PrivateRoute from './PrivateRoute.js';
+import PublicRoute from './PublicRoute.js';
 
 const RouteList = ({login, signup, logout}) => {
     return (
@@ -17,17 +18,18 @@ const RouteList = ({login, signup, logout}) => {
                 <Navbar logout={logout} />
                 <Routes>
                     <Route exact path="/" element={<FrontPage />} />
-
-                    <Route
-                        exact
-                        path="/login"
-                        element={<Login login={login} />}
-                    />
-                    <Route
-                        exact
-                        path="/signup"
-                        element={<Signup signup={signup} />}
-                    />
+                    <Route element={<PublicRoute />}>
+                        <Route
+                            exact
+                            path="/login"
+                            element={<Login login={login} />}
+                        />
+                        <Route
+                            exact
+                            path="/signup"
+                            element={<Signup signup={signup} />}
+                        />
+                    </Route>
 
                     <Route element={<PrivateRoute />}>
                         <Route
