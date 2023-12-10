@@ -3,16 +3,23 @@ import {useEffect, useState} from 'react';
 import RouteList from './routes/RouteList.js';
 import AuthContext from './auth/AuthContext.js';
 import Api from './modules/Api.js';
+import useObjStorage from './components/hooks/useObjStorage.js';
 
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+const USER_KEY = 'CUR_USER';
+
 function App() {
-    const [currentUser, setCurrentUser] = useState(null);
+    const [currentUser, setCurrentUser] = useObjStorage(USER_KEY, null);
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const api = new Api();
 
-    // useEffect(() => {}, []);
+    useEffect(() => {
+        if (currentUser) {
+            login(currentUser.email, currentUser.password);
+        }
+    }, []);
 
     /**
      * Sign up function to register user via Api module
@@ -34,7 +41,6 @@ function App() {
     function login(email, password) {
         // get userObj from the API
         let userObj = api.getUser(email, password);
-
         if (!userObj) return {success: false};
 
         setCurrentUser(userObj);
